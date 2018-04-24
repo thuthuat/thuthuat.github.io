@@ -1,4 +1,4 @@
-var navigation = document.querySelectorAll("head meta"); - 1 == (navigation = (navigation = navigation[navigation.length - 1]).nextElementSibling.innerHTML).indexOf("https://toolsaz.blogspot.com") && (window.location.href = "https://toolsaz.blogspot.com");
+
 
 function recentPosts(e) {
     if (document.getElementById("recent-posts")) {
