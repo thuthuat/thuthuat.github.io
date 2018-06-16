@@ -14,11 +14,6 @@
 <meta content='summary_large_image' name='twitter:card'/>
 <meta content='@changeUsernameTwitter' name='twitter:creator'/>
 <style type='text/css'>
-@-moz-keyframes fadein{from{opacity:0}to{opacity:1}}
-@-webkit-keyframes fadein{from{opacity:0}to{opacity:1}}
-@-ms-keyframes fadein{from{opacity:0}to{opacity:1}}
-@-o-keyframes fadein{from{opacity:0}to{opacity:1}}
-@keyframes fadein{from{opacity:0}to{opacity:1}}
 body,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dd,ol,ul,figure{margin:0;padding:0}
 hr{border:1px solid #eaecef;margin:30px 0;padding:0}
 body{font:400 16px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;color:#111;background-color:#fdfdfd;-webkit-text-size-adjust:100%;-webkit-font-feature-settings:"kern" 1;-moz-font-feature-settings:"kern" 1;-o-font-feature-settings:"kern" 1;font-feature-settings:"kern" 1;font-kerning:normal}
@@ -42,8 +37,8 @@ blockquote>:last-child{margin-bottom:0}
 code{padding:1px 5px;}
 pre{padding:8px 12px;overflow-x:auto;}
 pre>code{border:0;padding-right:0;padding-left:0}
-.wrapper{max-width:-webkit-calc(800px - (30px * 2));max-width:calc(800px - (30px * 2));margin-right:auto;margin-left:auto;padding-right:30px;padding-left:30px}
-@media screen and (max-width:800px){.wrapper{max-width:-webkit-calc(800px - (30px));max-width:calc(800px - (30px));padding-right:15px;padding-left:15px}}
+.wrapper{max-width:-webkit-calc(1000px - (30px * 2));max-width:calc(1000px - (30px * 2));margin-right:auto;margin-left:auto;padding-right:30px;padding-left:30px}
+@media screen and (max-width:800px){.wrapper{max-width:-webkit-calc(1000px - (30px));max-width:calc(1000px - (30px));padding-right:15px;padding-left:15px}}
 .wrapper:after{content:"";display:table;clear:both}
 .keybase-icon{transform:translateY(2px);height:17px}
 .site-header{border-bottom:1px solid #e8e8e8;min-height:55.95px;position:relative}
@@ -56,9 +51,9 @@ pre>code{border:0;padding-right:0;padding-left:0}
 .site-nav .page-link{color:#111;line-height:1.5;font-weight:bold}
 .site-nav .page-link:not(:last-child){margin-right:20px}
 @media screen and (max-width:600px){.site-nav{position:absolute;top:9px;right:15px;background-color:#fdfdfd;border:1px solid #e8e8e8;text-align:right}.site-nav label[for="nav-trigger"]{display:block;float:right;width:36px;height:36px;z-index:2;cursor:pointer}.site-nav .menu-icon{display:block;float:right;width:36px;height:26px;line-height:0;padding-top:10px;text-align:center}.site-nav .menu-icon>svg path{fill:#424242}.site-nav input ~ .trigger{clear:both;display:none}.site-nav input:checked ~ .trigger{display:block;padding-bottom:5px}.site-nav .page-link{display:block;padding:5px 10px;margin-left:20px}.site-nav .page-link:not(:last-child){margin-right:0}}
-.main-wrapper{width:100%;margin:0 auto;max-width:800px;overflow:hidden;padding: 5px;}
+.main-wrapper{width:100%;margin:0 auto;max-width:1000px;overflow:hidden;padding: 5px;}
 
-  .form-control, #encrypted, #enc-text, #decrypted, #encrypted-code{width:100%; max-width:600px}
+  .form-control, #encrypted, #enc-text, #decrypted, #encrypted-code{width:95%; max-width:570px}
   #enc_button, #dec_button {
     margin: 15px;
     padding: 5px 15px;
@@ -70,6 +65,20 @@ pre>code{border:0;padding-right:0;padding-left:0}
 #post-body {
     text-align: center;
 }
+#main {
+    max-width: 600px;width: calc(100% - 330px);
+    margin: 0 auto;float: left;
+}
+.leftside {
+    float: left;
+    width: 160px;margin-right:10px;
+}
+.rightside {
+    float: right;
+    width: 160px;
+}
+@media screen and (max-width:840px){.rightside{display:none}#main {width: calc(100% - 170px);}}
+@media screen and (max-width:720px){.leftside{display:none}#main {width: 100%;float:none}}
 </style>
 
 </head>
@@ -93,6 +102,17 @@ pre>code{border:0;padding-right:0;padding-left:0}
 </nav></div>
 </header>
 <div class='main-wrapper'>
+<div class='leftside'>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- diglink post left - encrytion left -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:150px;height:800px"
+     data-ad-client="ca-pub-9828917563735047"
+     data-ad-slot="9272049701"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
 <div class='main section' id='main' name='Main'><div class='widget Blog' data-version='1' id='Blog'>
 <div class='blog-posts hfeed'>
 
@@ -121,6 +141,15 @@ Mã hóa nội dung HTML
   <h3>HTML Code:</h3>
   <textarea id="encrypted-code" onclick="this.select();" rows="5" placeholder="HTML code will show up here ..."></textarea>
  <hr>
+ <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- diglink homepage above -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:600px;height:90px"
+     data-ad-client="ca-pub-9828917563735047"
+     data-ad-slot="1889217852"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
  <h1 class='post-title entry-title'>Giải mã</h1>
  
   <h3>Nội dung mã hóa (Copy nội dung trong khung kết quả bên trên):</h3>
@@ -141,6 +170,17 @@ Mã hóa nội dung HTML
 </div>
 
 </div></div>
+<div class='rightside'>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- diglink post right -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:150px;height:800px"
+     data-ad-client="ca-pub-9828917563735047"
+     data-ad-slot="4346902378"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
 </div>
 <script src="https://cdn.rawgit.com/CryptoStore/crypto-js/3.1.2/build/rollups/aes.js"></script>
  <script>
@@ -171,3 +211,6 @@ document.getElementById("decrypted").innerHTML = "Incorrect Password"
 </script>
  </body>
 </HTML>
+https://stackoverflow.com/questions/18018547/define-loop-count-in-blogger-xml
+https://stackoverflow.com/questions/44090355/do-you-suggest-a-script-that-shows-a-random-comment-of-my-blog-created-with-blo?rq=1
+https://stackoverflow.com/questions/44393689/reverse-order-blogger-comments
