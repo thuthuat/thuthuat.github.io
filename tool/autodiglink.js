@@ -38,8 +38,9 @@ function showurl(datajson){
         	tnsafe = safe[no].replace(/.*?:\/\//g,'');
             tnlength = tnsafe.length;          
 			tnlink = linktag[i].href;
+            tnlinklength = tnlink.replace(/.*?:\/\//g,'').length;
            checklink = tnlink.replace(/.*?:\/\//g,'').substring(0, tnlength);
-			if (tnsafe.match(checklink)) {
+			if (tnsafe.match(checklink) && tnlength < tnlinklength) {
 				check = true;
                 			linktag[i].href = links[randindex] + setting.path + aesCrypto.encrypt(convertstr(linktag[i].href),convertstr('root'));
 			linktag[i].rel = "nofollow";
