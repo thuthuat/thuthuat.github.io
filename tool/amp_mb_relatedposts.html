@@ -45,7 +45,35 @@ var labelArray = [getQueryVariable("label")],
         numPosts: 8,
         summaryLength: 100,
         widgetStyle: 3,
-        callBack: function() 
+        callBack: function() {
+            var $container = $('#' + this.containerId + ' > ul'),
+                $list = $container.find('li'),
+                innerHeight = $list.first().height(),
+                outerHeight = $list.first().outerHeight(true);
+            // Container & list height setup
+            $container.css({
+                "height": outerHeight * $list.length / 2,
+                "overflow": "hidden"
+            });
+            $list.css({
+                "height": innerHeight,
+                "overflow": "hidden"
+            });
+            // Animation
+            function newsTicker() {
+                window.setTimeout(function() {
+                    $container.find('li:last').stop().animate({
+                        opacity: 0
+                    }, 100000, function() {
+                        $(this).hide().prependTo($container).slideDown(1000, function() {
+                            $(this).stop().animate({
+                                opacity: 1
+                            }, 100000, newsTicker);
+                        });
+                    });
+                }, 300000);
+            } newsTicker();
+        }
     };
 </script>
  <script>
