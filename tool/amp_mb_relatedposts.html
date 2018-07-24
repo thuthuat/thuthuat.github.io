@@ -39,22 +39,43 @@ a){var b=F.exec(a);b&&(b[1]=(b[1]||"").toLowerCase(),b[3]=b[3]&&new RegExp("(?:^
   }
   return(false);
 }
-              var labelArray = [getQueryVariable("label")],
-                  relatedPostConfig = {
-                  homePage: getQueryVariable("url"),
-                  widgetTitle: &quot;&lt;div class=&#39;label-line-c&#39;&gt;&lt;h4&gt;Related Posts&lt;/h4&gt;&lt;/div&gt;&quot;,
-                  numPosts: 4,
-                  summaryLength: 370,
-                  titleLength: &quot;auto&quot;,
-                  thumbnailSize: 250,
-                  noImage: &quot;//3.bp.blogspot.com/-ltyYh4ysBHI/U04MKlHc6pI/AAAAAAAADQo/PFxXaGZu9PQ/w250-h166-c-e30/no-image.png&quot;,
-                  containerId: &quot;related-post&quot;,
-                  newTabLink: false,
-                  moreText: &quot;Read More&quot;,
-                  widgetStyle: 3,
-                  callBack: function() {}
-              };
-              </script>
+var labelArray = [],
+    relatedPostConfig = {
+		homePage: getQueryVariable("url"),
+        numPosts: 8,
+        summaryLength: 100,
+        widgetStyle: 3,
+        callBack: function() {
+            var $container = $('#' + this.containerId + ' > ul'),
+                $list = $container.find('li'),
+                innerHeight = $list.first().height(),
+                outerHeight = $list.first().outerHeight(true);
+            // Container & list height setup
+            $container.css({
+                "height": outerHeight * $list.length / 2,
+                "overflow": "hidden"
+            });
+            $list.css({
+                "height": innerHeight,
+                "overflow": "hidden"
+            });
+            // Animation
+            function newsTicker() {
+                window.setTimeout(function() {
+                    $container.find('li:last').stop().animate({
+                        opacity: 0
+                    }, 100000, function() {
+                        $(this).hide().prependTo($container).slideDown(1000, function() {
+                            $(this).stop().animate({
+                                opacity: 1
+                            }, 100000, newsTicker);
+                        });
+                    });
+                }, 300000);
+            } newsTicker();
+        }
+    };
+</script>
  <script>
 //<![CDATA[       
 /*! Related Post Widget for Blogger by Taufik Nurrohman => http://gplus.to/tovic */
