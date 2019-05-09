@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<HTML dir='ltr' lang='vi'>
+<head>
+<style type='text/css'>
+body,h1,h2,h3,h4,h5,h6,p,blockquote,pre,dl,dd,ol,ul,figure{margin:0;padding:0}
+hr{border:1px solid #eaecef;margin:30px 0;padding:0}
+body{font:400 16px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;color:#111;background-color:#fdfdfd;-webkit-text-size-adjust:100%;-webkit-font-feature-settings:"kern" 1;-moz-font-feature-settings:"kern" 1;-o-font-feature-settings:"kern" 1;font-feature-settings:"kern" 1;font-kerning:normal}
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,ul,ol,dl,figure,.highlight{margin-bottom:15px}
+h1{margin-top:15px;text-align:center;font-size: 28px;;}
+h2{margin-top:15px}
+h3,h4{margin-top:10px}
+pre{margin-top:5px}
+img{max-width:100%;vertical-align:middle}
+figure>img{display:block}
+figcaption{font-size:10.4px}
+ul,ol{margin-left:30px}
+li>ul,li>ol{margin-bottom:0}
+h1,h2,h3,h4,h5,h6{font-weight:400}
+.landing-content a{white-space:nowrap}
+a{color:#333;fill:#333;text-decoration:none;cursor:pointer}
+a:visited{color:#828282}
+a:hover{color:#424242;text-decoration:underline}
+blockquote{color:#828282;border-left:4px solid #e8e8e8;padding-left:15px;font-size:18px;letter-spacing:-1px;font-style:italic}
+blockquote>:last-child{margin-bottom:0}
+code{padding:1px 5px;}
+pre{padding:8px 12px;overflow-x:auto;}
+pre>code{border:0;padding-right:0;padding-left:0}
+.wrapper{max-width:-webkit-calc(1000px - (30px * 2));max-width:calc(1000px - (30px * 2));margin-right:auto;margin-left:auto;padding-right:30px;padding-left:30px}
+@media screen and (max-width:800px){.wrapper{max-width:-webkit-calc(1000px - (30px));max-width:calc(1000px - (30px));padding-right:15px;padding-left:15px}}
+
+@media screen and (max-width:600px){.site-nav{position:absolute;top:9px;right:15px;background-color:#fdfdfd;border:1px solid #e8e8e8;text-align:right}.site-nav label[for="nav-trigger"]{display:block;float:right;width:36px;height:36px;z-index:2;cursor:pointer}.site-nav .menu-icon{display:block;float:right;width:36px;height:26px;line-height:0;padding-top:10px;text-align:center}.site-nav .menu-icon>svg path{fill:#424242}.site-nav input ~ .trigger{clear:both;display:none}.site-nav input:checked ~ .trigger{display:block;padding-bottom:5px}.site-nav .page-link{display:block;padding:5px 10px;margin-left:20px}.site-nav .page-link:not(:last-child){margin-right:0}}
+.main-wrapper{width:100%;margin:0 auto;max-width:1000px;overflow:hidden;padding: 5px;}
+  .form-control, #encrypted, #enc-text, #decrypted, #encrypted-code{width:95%; max-width:570px}
+  #enc_button, #dec_button {
+    margin: 15px;
+    padding: 5px 15px;
+}
+#encrypted-code {
+    background: #ffb4001a;
+    border: 1px solid #00ad62;
+}
+#post-body {
+    text-align: center;
+}
+#main {
+    max-width: 600px;width: calc(100% - 330px);
+    margin: 0 auto;float: left;
+}
+
+@media screen and (max-width:840px){.rightside{display:none}#main {width: calc(100% - 170px);}}
+@media screen and (max-width:720px){.leftside{display:none}#main {width: 100%;float:none}}
+  .result-hide{display:none}
+</style>
+
+</head>
+
+<body class='index' itemscope='itemscope' itemtype='http://schema.org/WebPage'>
+
+<article class='post'>
+<meta content=''/>
+<h1 class='post-title entry-title'>
+AMP HTML Converter Tool
+</h1>
+<div class='post-body entry-content' id='post-body'>
+<div id='encrypt'>
+
+ <h3>Input HTML:</h3>
+  <textarea class="form-control" id="new_note" placeholder="<html><head>..." rows="10"></textarea>
+<br \>
+
+  <input type="button" id="enc_button" value="Encode">
+  <div class='result-hide'>
+  <h3>Kết quả:</h3>
+  <textarea id="encrypted" onclick="this.select();" rows="1" placeholder="Conversion results will show up here ..."></textarea>
+  </div>
+    <h3>AMP HTML Code:</h3>
+  <textarea id="encrypted-code" onclick="this.select();" rows="10" placeholder="HTML code will show up here ..."></textarea>
+ <hr>
+<script>    
+document.getElementById("enc_button").onclick = function(){
+  var text = document.getElementById("new_note").value;
+  document.getElementById("encrypted-code").value = text.replace(/<img\s/gi,'<amp-img layout="responsive" ').replace(/\<\/img\>/gi,'<\/amp-img>').replace(/[0-9]+.bp.blogspot.com/,"lh5.ggpht.com").replace(/(\ssrc=[^\/\/]*\/\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*)(\/[^\/]*)\//gi, '$1$2-e30\/');
+}
+</script>
+</body>
+</html>
