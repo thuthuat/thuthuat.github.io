@@ -79,7 +79,7 @@ AMP HTML Converter Tool
 <script>    
 document.getElementById("enc_button").onclick = function(){
   var text = document.getElementById("new_note").value;
-  document.getElementById("encrypted-code").value = text.replace(/<img\s/gi,'<amp-img layout="responsive" ').replace(/\<\/img\>/gi,'<\/amp-img>').replace(/[0-9]+.bp.blogspot.com/gi,"lh5.ggpht.com").replace(/(\ssrc=[^\/\/]*\/\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*)(\/[^\/]*)\//gi, '$1$2-e30\/').replace(/\nimageanchor\=\"1\"/,'').replace(/\nborder\=\"0\"/,'');
+  document.getElementById("encrypted-code").value = text.replace(/<img\s/gi,'<amp-img layout="responsive" ').replace(/\<\/img\>/gi,'<\/amp-img>').replace(/[0-9]+.bp.blogspot.com/gi,"lh5.ggpht.com").replace(/(\ssrc=[^\/\/]*\/\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*)(\/[^\/]*)\//gi, '$1$2-e30\/').replace(/\simageanchor\=\"1\"/gi,'').replace(/\sborder\=\"0\"/gi,'');
 }
 </script>
 </body>
