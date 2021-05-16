@@ -137,7 +137,10 @@ footer.footer{border-top:1px solid #dee2e6;margin-top: 15px;}
 } 
 .countdown{font-size:2rem;color:#f44336;font-weight:600}  
 .modal{display:none;position:fixed;z-index:9999;padding-top:100px;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:#000;background-color:rgba(0,0,0,.4)}.modal-content{background-color:#fefefe;margin:auto;padding:20px;border:1px solid #888;width:100%;max-width:600px;font-size:0.9rem;}.close{color:#aaa;float:right;font-size:28px;font-weight:700}.close:focus,.close:hover{color:#000;text-decoration:none;cursor:pointer}.panel-body li{list-style:inherit;margin-left:20px}
-
+#result,#bitly{padding-left:20px}
+.resultshow::before{content:"Encrypt link Result:";font-size:1.5rem;line-height:2.5rem}
+#result li,#bitly li{list-style:decimal;font-size:0.9rem}
+.bitlyshow::before{content:"Bitly Shorten Link:";font-size:1.5rem;line-height:2.5rem}
 </style>
 <script src='//code.jquery.com/jquery-2.1.4.min.js' type='text/javascript'></script>
 <script>
@@ -281,7 +284,7 @@ footer.footer{border-top:1px solid #dee2e6;margin-top: 15px;}
         data: JSON.stringify(params)
         }).done(function(data) {
               if(s.anchor === true) {
-              s.success.call(this, $('#bitly').append(data.link+'<br>'));
+              s.success.call(this, $('#bitly').append('<li>'+data.link+'</li>'));
 
             } else {
               s.success.call(this, data.link);           
@@ -321,6 +324,7 @@ $(document).ready(function() {
       }
       W.sUp = function(el) {
         D.querySelector(el).parentNode.style.height = '0';
+        $("#bitly").html('');$("#result").html('')
       }
       W._GET = function(name, url) {
         if (!url) url = location.href;
@@ -434,9 +438,9 @@ lang: {
 <label class='custom-control-label' for='countDown' onclick='sUp(&#39;#result&#39;)'>Countdown</label>
 </div>
 </section>
-<section class='trans' style='overflow: hidden;height: 0'>
-<div id='result'></div>
-<div id='bitly'></div>
+<section class='trans' style='overflow: hidden;'>
+<ul id='result'></ul>
+<ul id='bitly'></ul>
 </section>
 <section class='layouthide'>
 <div class='row text-center' style='margin-top:20%'>
@@ -495,7 +499,7 @@ lang: {
 
                     if (url.value.length) {
                 var resultencode = config.page+'?u='+encodeURIComponent(Tea.encrypt(JSON.stringify(data), keyit));
-                        result.innerHTML += validurlit(url.value) ? resultencode +'<br>': config.lang.validtext ;
+                        result.innerHTML += validurlit(url.value) ? '<li>'+resultencode +'</li>': config.lang.validtext ;
             if (validurlit(url.value)) {
 
         $.bitlr({
@@ -504,8 +508,6 @@ lang: {
         anchor: true,
         success: function(newLink) {
           //$('#bitly').html(newLink);
-          //$('#bitly').html($('#bitly',newLink).html());
-          //$('#bitly').replaceWith($('#bitly',newLink));
         },
         error: function() {
           $('.urls').hide();
@@ -519,8 +521,9 @@ lang: {
                     }
                   }
                     setTimeout(function(){
-               if (validurlit(url.value)) {$("#bitly").css({"overflow": "hidden", "height": "100px"})}else{$("#bitly").css({"overflow": "hidden", "height": "0px"})};
-                result.parentNode.style.height = result.offsetHeight+bitly.offsetHeight+'px';
+               if (validurlit(url.value)) {$("#result").addClass('resultshow');$("#bitly").addClass('bitlyshow');};
+                //result.parentNode.style.height = result.offsetHeight+bitly.offsetHeight+'px';
+                result.parentNode.style.height = 'auto';
                     }, 0);
                   });
                 });
