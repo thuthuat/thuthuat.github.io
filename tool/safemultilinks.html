@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html class='v2' data-page-common-type='index' data-page-type='homepage' data-theme-mode='light' data-theme-style='grid' dir='ltr' lang='en'>
+<!--dark-->
+<!--grid list-->
+
+<head>
+
+<title>diglink</title>
+<style>
+[data-theme-mode="light"] body{--bg:#f5f5f5;--textTitle:hsl(0,0%,20%);--textNormal:hsl(230,8%,5%);--textBold:hsl(230,1%,0%);--textsub:hsl(0,0%,30%);--header:hsl(230,1%,0%);--headerbg:hsl(0,0%,100%);--textLink:hsl(0,0,20%);--textLinkHover:hsl(16,100%,50%);--hr:hsl(0,0%,88%);--widgetbg:hsl(0,0%,100%);--codebg:#e7e7e7; --postbg:hsl(0,0%,100%) none repeat scroll 0% 0%;}
+[data-theme-mode="dark"] body{--bg:#1c2733;--textTitle:hsl(220,1%,90%);--textNormal:hsl(220,14%,90%);--textBold:hsl(220,1%,100%);--textsub:hsl(0,0%,70%);--header:hsl(0,0%,100%);--headerbg:hsl(220,13%,16.5%);--textLink:hsl(0,0,95%);--textLinkHover:hsl(16, 100%, 50%);--hr:hsl(210, 1.6%, 23.9%);--widgetbg:#2f333d;--codebg:hsl(220,13%,14%);--postbg:hsl(220,13%,21%) none repeat scroll 0% 0%;}
+  
+html{line-height:1.4;-webkit-text-size-adjust:100%;font-size:18px}
+*,::after,::before{box-sizing:border-box}  
+h1{color:var(--textTitle)}
+h2,h3,h4,h5,h6{color:var(--header);font-weight:600; padding: 10px 0 5px;}
+body{background:var(--bg);margin:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:Segoe ui,Arial,sans-serif;font-size:1rem}
+a{color:var(--textLink);background-color:transparent;text-decoration:none;-webkit-text-decoration-skip:objects}
+a{font-weight:600}
+a:hover{color:var(--textLinkHover)}
+b,strong{color:var(--textBold);font-weight:bold}
+hr{border:none;margin:10px 0;height:1px;background-color:var(--hr);color:var(--hr)}
+body *{-webkit-transition:color .2 linear,background-color .2s linear;transition:color .2s linear,background-color .2s linear}
+p,div{color:var(--textNormal)}
+abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}
+pre,code,kbd,samp{font-family:consolas,monospace;;font-size:0.9rem}
+small{font-size:0.8rem}
+sub,sup{font-size:0.8rem;line-height:0;position:relative;vertical-align:baseline}
+sub{bottom:-0.25em}
+sup{top:-0.5em}
+img{border-style:none;display:block;max-width:100%;height:auto;margin:auto}
+button,input,optgroup,select,textarea{font-family:inherit;font-size:rem;line-height:1.3;margin:0}
+button,input{overflow:visible}
+button,select{text-transform:none}
+button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button}
+button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0}
+button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText}
+fieldset{padding:0.35em 0.75em 0.625em}
+legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}
+progress{vertical-align:baseline}
+textarea{overflow:auto}
+[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0}
+[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto}
+[type="search"]{-webkit-appearance:textfield;outline-offset:-2px}
+[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
+::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
+table,img{max-width:100%;height:auto;display:block}
+ul,li{list-style:none}
+*{padding:0;margin:0;outline:0;border:0 none;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.hidden{visibility:hidden;height:0;overflow:hidden;display:none}  
+.clear { clear: both;height:0}
+.outer-wrapper,#header-wrapper{max-width:1000px;margin:0 auto;padding:0 15px;overflow:hidden;}
+.content-wrapper{width:100%;text-align:left;margin:0 auto;padding:0}
+#content-wrapper {margin-bottom: 20px;}
+[data-page-common-type="index"] .main-wrapper,[data-page-common-type="item"] .main-wrapper{width:100%;position: relative;word-wrap:break-word;}
+.index-post-wrap{padding:10px 5px;}
+[data-page-common-type="index"] .post-outer{border-bottom: 1px solid var(--hr);;position:relative;overflow:hidden;padding:20px 0;}
+.header-wrapper{border-bottom:1px solid #dee2e6;padding:10px 0;margin-bottom:20px;overflow: hidden;}
+.site-brand h1{float:left}
+#htuopen{float:right;padding-top:6px;cursor: pointer;font-weight: 600;}
+h1.post-title{line-height:2rem;font-size: 1.5rem;padding: 10px 0;}
+.post-header{font-size:0.85rem;color:var(--textsub);margin: 0 0 10px 10px;}
+.post-header svg{margin-left:10px}
+pre{background:var(--codebg);margin:10px;border-radius:5px;white-space:pre-wrap;overflow:auto}
+:not(pre) > code{background:var(--codebg);color:var(--textNormal);padding:2px 5px;border-radius:4px}
+pre code{padding:10px;display:inline-block;word-wrap: anywhere;}
+.post h2,.post h3{margin:10px 0;line-height: 1.3em;}
+
+.overflow-hidden{overflow:hidden}
+.trans{-webkit-transition:all .5s ease-in-out;-moz-transition:all .5s ease-in-out;-ms-transition:all .5s ease-in-out;-o-transition:all .5s ease-in-out;transition:all .5s ease-in-out}
+.hidding-smooth{position:relative;height:6vh;overflow:hidden}
+.hidding-smooth:after{-webkit-transition:ease 0.8s;-moz-transition:ease 0.8s;-ms-transition:ease 0.8s;-o-transition:ease 0.8s;transition:ease 0.8s;position:absolute;bottom:0;left:0;right:0;content:'';background:linear-gradient(180deg,transparent,white 70%);width:100%;height:5vh}
+.hidding-smooth:hover:after{height:1px}
+#fullpage{min-height:100%;margin:0 0 -120px 0;padding:0 0 120px 0}
+.sticky-top{position:-webkit-sticky;position:sticky;top:calc(60px + 1rem);z-index:1020}
+.main-wrapper{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.main-wrapper .main-left,.main-wrapper .main-right{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}
+.main-wrapper .main-content{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}
+  
+.input-group{position:relative;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:stretch;align-items:stretch;width:100%;margin-bottom: 1rem;}
+.input-group-append,.input-group-prepend{display:-ms-flexbox;display:flex}
+.input-group > .input-group-prepend > .input-group-text{border-top-right-radius:0;border-bottom-right-radius:0}
+.input-group > .input-group-append > .btn{border-top-left-radius:0;border-bottom-left-radius:0}
+.input-group > .custom-select:not(:last-child),.input-group > .form-control:not(:last-child){border-top-right-radius:0;border-bottom-right-radius:0}  
+.input-group-text{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;padding:.375rem .75rem;margin-bottom:0;font-size:1rem;font-weight:400;line-height:1.5;color:#495057;text-align:center;white-space:nowrap;background-color:#e9ecef;border:1px solid #ced4da;border-radius:.25rem;border-top-right-radius:0.25rem;border-bottom-right-radius:0.25rem}
+.input-group > .form-control:not(:first-child),.input-group > .form-control:not(:last-child){border-top-left-radius:0;border-bottom-left-radius:0}
+.input-group > .form-control,.input-group > .form-control-plaintext{position:relative;-ms-flex:1 1 auto;flex:1 1 auto;width:1%;margin-bottom:0}
+.form-control{display:block;width:100%;height:calc(1.5em + .75rem + 2px);padding:.375rem .75rem;font-size:1rem;font-weight:400;line-height:1.5;color:#495057;background-color:#fff;background-clip:padding-box;border:1px solid #ced4da;border-radius:.25rem;transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out}
+.form-control:disabled,.form-control[readonly]{background-color:#e9ecef;opacity:1}  
+.input-group-append .btn,.input-group-prepend .btn{position:relative;z-index:2}
+.input-group-prepend{margin-right:-1px}  
+.input-group-append{margin-left:-1px}  
+.optioncontrol{margin-bottom:1rem;text-align:center;}  
+.linkbit .input-group-prepend,.linkresult .input-group-prepend{cursor:pointer}
+.copied{position:absolute;right:8px;top:8px;border:1px solid var(--textLinkHover);padding:0 5px;border-radius:3px;color: #155724;background:#d4edda;font-size:0.9rem;transition: all 0.5s ease-in-out;-webkit-transition:all 0.5s ease-in-out;}  
+#result .input-group{margin-bottom:0;padding-bottom:1rem}  
+[type="submit"]:not(:disabled),button:not(:disabled){cursor:pointer}
+.btn{display:inline-block;font-weight:400;color:#212529;text-align:center;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-color:transparent;border:1px solid transparent;border-top-color:transparent;border-right-color:transparent;border-bottom-color:transparent;border-left-color:transparent;padding:.375rem .75rem;font-size:0.9rem;line-height:1.5;border-radius:.25rem;border-top-left-radius:0.25rem;border-bottom-left-radius:0.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}
+.btn-primary{color:#fff;background-color:var(--textLinkHover);;border-color:var(--textLinkHover);}  
+.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;}
+.col-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}
+.btn-block{display:block;width:100%}
+.btn-dark{color:#fff;background-color:#343a40;border-color:#343a40;white-space: pre;}
+.col-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}
+.col-93,.col-9{position:relative;width:100%;padding-right:15px;padding-left:15px}
+.custom-switch{padding-left:2.25rem}
+.custom-control{position:relative;display:block;min-height:1.5rem;padding-left:1.5rem}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+.custom-control-input{position:absolute;z-index:-1;opacity:0}
+.custom-control-label{position:relative;margin-bottom:0;vertical-align:top}
+label{display:inline-block;margin-bottom:.5rem}
+.custom-switch .custom-control-label::before{left:-2.25rem;width:1.75rem;pointer-events:all;border-radius:.5rem}
+.custom-control-label::before,.custom-file-label,.custom-select{transition:background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}
+.custom-control-label::before{position:absolute;top:.25rem;left:-1.5rem;display:block;width:1rem;height:1rem;pointer-events:none;content:"";background-color:#fff;border:#adb5bd solid 1px}
+.custom-switch .custom-control-label::after{top:calc(.25rem + 2px);left:calc(-2.25rem + 2px);width:calc(1rem - 4px);height:calc(1rem - 4px);background-color:#adb5bd;border-radius:.5rem;transition:background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-transform .15s ease-in-out;transition:transform .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;transition:transform .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-transform .15s ease-in-out}
+.custom-control-label::after{position:absolute;top:.25rem;left:-1.5rem;display:block;width:1rem;height:1rem;content:"";background:no-repeat 50%/50% 50%;background-color:rgba(0,0,0,0)} 
+.custom-control-input:checked ~ .custom-control-label::before{color:#fff;border-color:#007bff;background-color:#007bff}
+.d-inline-block{display:inline-block;margin-right:1rem;}
+.custom-switch .custom-control-input:checked ~ .custom-control-label::after{background-color:#fff;-webkit-transform:translateX(.75rem);transform:translateX(.75rem)}
+.text-center{text-align:center}
+button.text-center{color:#fff;background-color:#2196F3;padding:10px 15px;border-radius:5px;font-size:1rem}  
+#gotolink{margin:15px auto;padding:10px 15px;border-radius:5px;background:#04AA6D;color:#fff;font-size:1rem} 
+#gotolink:disabled{background:#04AA6D80}  
+.alert-success{color:#155724;background-color:#d4edda;border-color:#c3e6cb}
+.alert{position:relative;padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-top-color:transparent;border-right-color:transparent;border-bottom-color:transparent;border-left-color:transparent;border-radius:.25rem}  
+.alert-danger{color:#721c24;background-color:#f8d7da;border-color:#f5c6cb} 
+.alert-warning{color:#856404;background-color:#fff3cd;border-color:#ffeeba}  
+.featured{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}
+footer.footer{border-top:1px solid #dee2e6;margin-top: 15px;}
+.text-right{text-align:right!important}
+.credit{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%;margin-top: 10px;} 
+.border{border:1px solid #ddd; margin:0 auto;padding:15px;}  
+#output{margin:1rem auto;text-align: center;}  
+@media only screen and (max-width:800px){
+.main-wrapper .main-left,.main-wrapper .main-right{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}
+.main-wrapper .main-content{-ms-flex:0 0 100%;flex:0 0 100%;max-width:600px;margin:0 auto}
+} 
+.countdown{font-size:2rem;color:#f44336;font-weight:600}  
+.modal{display:none;position:fixed;z-index:9999;padding-top:100px;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:#000;background-color:rgba(0,0,0,.4)}.modal-content{background-color:#fefefe;margin:auto;padding:20px;border:1px solid #888;width:100%;max-width:600px;font-size:0.9rem;}.close{color:#aaa;float:right;font-size:28px;font-weight:700}.close:focus,.close:hover{color:#000;text-decoration:none;cursor:pointer}.panel-body li{list-style:inherit;margin-left:20px}
+
+</style>
+<script src='//code.jquery.com/jquery-2.1.4.min.js' type='text/javascript'></script>
+<script>
+   
+//<![CDATA[
+  /* - - - - - - -  - - - - - - -  */
+  /* Script Dapat dari situs : www.movable-type.co.uk/scripts/tea-block.html - - - - - - - - - - -  */
+  /* Block TEA (xxtea) Tiny Encryption Algorithm                        (c) Chris Veness 2002-2017  */
+  /*                                                                                   MIT Licence  */
+  /* Tiny Encryption Algorithm. David Wheeler & Roger Needham, Cambridge University Computer Lab.   */
+  /* Script dibawah tidak diubah 
+  hanya dibuang komentarnya - - - - */
+  /* - - - - - - -  */
+  'use strict';
+  class Tea {
+      static encrypt(plaintext, password) {
+          plaintext = String(plaintext);
+          password = String(password);
+          if (plaintext.length == 0) return('');
+          const v = Tea.strToLongs(Tea.utf8Encode(plaintext));
+          const k = Tea.strToLongs(Tea.utf8Encode(password).slice(0,16));
+          const cipher = Tea.encode(v, k);
+          const ciphertext = Tea.longsToStr(cipher);
+          const cipherbase64 = Tea.base64Encode(ciphertext);
+          return cipherbase64;
+      }
+      static decrypt(ciphertext, password) {
+          ciphertext = String(ciphertext);
+          password = String(password);
+          if (ciphertext.length == 0) return('');
+          const v = Tea.strToLongs(Tea.base64Decode(ciphertext));
+          const k = Tea.strToLongs(Tea.utf8Encode(password).slice(0,16));
+          const plain = Tea.decode(v, k);
+          const plaintext = Tea.longsToStr(plain);
+          const plainUnicode = Tea.utf8Decode(plaintext.replace(/\0+$/,''));
+          return plainUnicode;
+          //return plaintext;
+      }
+      static encode(v, k) {
+          if (v.length < 2) v[1] = 0;
+          const n = v.length;
+          const delta = 0x9e3779b9;
+          let q = Math.floor(6 + 52/n);
+          let z = v[n-1], y = v[0];
+          let mx, e, sum = 0;
+          while (q-- > 0) {
+              sum += delta;
+              e = sum>>>2 & 3;
+              for (let p = 0; p < n; p++) {
+                  y = v[(p+1)%n];
+                  mx = (z>>>5 ^ y<<2) + (y>>>3 ^ z<<4) ^ (sum^y) + (k[p&3 ^ e] ^ z);
+                  z = v[p] += mx;
+              }
+          }
+          return v;
+      }
+      static decode(v, k) {
+          const n = v.length;
+          const delta = 0x9e3779b9;
+          const q = Math.floor(6 + 52/n);
+          let z = v[n-1], y = v[0];
+          let mx, e, sum = q*delta;
+          while (sum != 0) {
+              e = sum>>>2 & 3;
+              for (let p = n-1; p >= 0; p--) {
+                  z = v[p>0 ? p-1 : n-1];
+                  mx = (z>>>5 ^ y<<2) + (y>>>3 ^ z<<4) ^ (sum^y) + (k[p&3 ^ e] ^ z);
+                  y = v[p] -= mx;
+              }
+              sum -= delta;
+          }
+          return v;
+      }
+      static strToLongs(s) {
+          const l = new Array(Math.ceil(s.length/4));
+          for (let i=0; i<l.length; i++) {
+              l[i] = s.charCodeAt(i*4)        + (s.charCodeAt(i*4+1)<<8) +
+                  (s.charCodeAt(i*4+2)<<16) + (s.charCodeAt(i*4+3)<<24);
+          }
+          return l;
+      }
+      static longsToStr(l) {
+          let str = '';
+          for (let i=0; i<l.length; i++) {
+              str += String.fromCharCode(l[i] & 0xff, l[i]>>>8 & 0xff, l[i]>>>16 & 0xff, l[i]>>>24 & 0xff);
+          }
+          return str;
+      }
+      static utf8Encode(str) {
+          return unescape(encodeURIComponent(str));
+      }
+      static utf8Decode(utf8Str) {
+          try {
+              return decodeURIComponent(escape(utf8Str));
+          } catch (e) {
+              return utf8Str;
+          }
+      }
+      static base64Encode(str) {
+          if (typeof btoa != 'undefined') return btoa(str);
+          if (typeof Buffer != 'undefined') return new Buffer(str, 'binary').toString('base64');
+          throw new Error('No Base64 Encode');
+      }
+      static base64Decode(b64Str) {
+          if (typeof atob == 'undefined' && typeof Buffer == 'undefined') throw new Error('No base64 decode');
+          try {
+              if (typeof atob != 'undefined') return atob(b64Str);
+              if (typeof Buffer != 'undefined') return new Buffer(b64Str, 'base64').toString('binary');
+          } catch (e) {
+              throw new Error('Invalid ciphertext');
+          }
+      }
+  }
+  /* - - - - - - - - - - - - -  */
+  if (typeof module != 'undefined' && module.exports) module.exports = Tea; // ≡ export default Tea;
+
+/*!Name: Bitlymaxbong*/
+
+;(function($) {
+    $.bitlr = function(options) {
+        var defaults = {
+            error: function(message) {},
+            success: function() {}
+        }       
+        var plugin = this;
+        plugin.settings = {}
+        plugin.settings = $.extend({}, defaults, options);
+        var s = plugin.settings;
+        var params = {
+            "long_url" : s.link           
+        };
+        $.ajax({
+    url: "https://api-ssl.bitly.com/v4/shorten",
+        //cache: false,
+        dataType: "json",
+        method: "POST",
+        contentType: "application/json",
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Bearer " + s.apiKey);
+        },
+        data: JSON.stringify(params)
+        }).done(function(data) {
+              if(s.anchor === true) {
+              s.success.call(this, $('#bitly').append(data.link+'<br>'));
+
+            } else {
+              s.success.call(this, data.link);           
+            }
+        }).fail(function(data) {
+              s.error.call(this);
+        });
+    }
+})(jQuery);
+ 
+"use strict";
+$(document).ready(function() {
+  (function(W,D){
+    W.asli_config = {
+      page: 'https://diglink.blogspot.com/p/go.html',
+      output: '#output',
+      gotolink: '#gotolink',  
+      defaultkey: 'maxbong',
+      fixednavbar: false,
+      countdown: true,
+   click2x: true,  
+      timedown: 10,
+      lang: {
+        urlempty: "URL can not empty",
+        convertsuccess: "Convert URL success, copy url on box below",
+        validtext: "HTTP, HTTPS, or WWW",
+        gourltext: "Click here to go",
+        nourl: "No URL here",
+        errorconvert: "URL can not to convert",
+        emptypass: "Password can not empty",
+        wrongpass: "Password is incorrect",
+        countdowntext: "Please Wait <span class='countdown'>{{anascountdown}}</span> Seconds"
+      }
+    }
+      W.validurlit = function (ur) {
+        return /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/.test(ur);
+      }
+      W.sUp = function(el) {
+        D.querySelector(el).parentNode.style.height = '0';
+      }
+      W._GET = function(name, url) {
+        if (!url) url = location.href;
+        name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+        var regexS = "[\\?&]"+name+"=([^&#]*)";
+        var regex = new RegExp( regexS );
+        var results = regex.exec( url );
+        return results == null ? null : results[1];
+      }
+  }(window,document));
+});
+//]]>  
+</script>
+</head><!--<head>
+</head>-->
+<!--<body>--> 
+<div class='outer-wrapper'>
+<div class='header-wrapper'>
+<nav class='navbar' data-type='fixednav'>
+<div class='site-brand'>
+<h1><a class='navbar-brand' href='https://diglink.blogspot.com/'>diglink</a></h1>
+</div>
+<div id='htuopen'>How to use</div>
+<div class='modal' id='myModal'>
+<div class='modal-content'>
+<span class='close'>&#215;</span>
+<div class='notiftext'>
+<h3>How to use</h3>
+<div class='panel-body'>
+<ol>
+<li>Put the link on the box with <strong>http://</strong> or <strong>https://</strong> or <strong>www</strong></li>
+<li>Use <kbd><kbd>CTRL</kbd> + <kbd>V</kbd></kbd> on keyboard to put the link.</li>
+<li>Click the <strong>Convert</strong> button to get encrypted link.</li>
+<li>Click the <strong>Copy</strong> icon to copy your link to clipboard!</li>
+<li>Done.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<div class='content-wrapper' id='fullpage'>
+<div class='page-setting section' id='page-setting'><div class='widget HTML' data-version='2' id='HTML696'>
+<script type='text/javascript'>
+  "use strict";
+  $(document).ready(function() {
+    window.new_config = {
+page: "https://diglink.blogspot.com/p/go.html",
+output: "#output",
+gotolink: "#gotolink",           
+fixednavbar: true,
+countdown: true,
+click2x: true,           
+timedown: 10,
+lang: {
+ urlempty: "URL can not be empty",
+ convertsuccess: "Convert URL success, copy url on box below",
+ validtext: "HTTP, HTTPS, or WWW",
+ gourltext: "Click here to go",
+ nourl: "No URl here",
+ errorconvert: "URL can not to convert",
+ emptypass: "Password can not be empty",
+ wrongpass: "Password is incorrect",
+ countdowntext: "Please Wait <span class='countdown'>{{anascountdown}}</span> Seconds"
+}
+    }
+    window.config = $.extend(true, asli_config, new_config);
+  });
+</script>
+</div></div>
+<div class='main-wrapper'>
+<div class='main-left'>
+<div class='ads-left sticky-top section' id='ads-left'><div class='widget HTML' data-version='2' id='HTML602'>
+</div></div>
+</div>
+<div class='main-content'>
+<section>
+<form autocomplete='off' class='form-group' id='safelink'>
+<div class='input-group'>
+<div class='input-group-prepend'>
+<span class='input-group-text'><svg fill='none' height='24' id='i-link' stroke='currentcolor' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' viewBox='0 0 32 32' width='24' xmlns='http://www.w3.org/2000/svg'>
+<path d='M18 8 C18 8 24 2 27 5 30 8 29 12 24 16 19 20 16 21 14 17 M14 24 C14 24 8 30 5 27 2 24 3 20 8 16 13 12 16 11 18 15'></path></svg></span>
+</div>
+<input class='form-control' id='urlinput' onclick='sUp(&#39;#result&#39;)' onkeypress='sUp(&#39;#result&#39;)' placeholder='HTTP, HTTPS, or WWW' type='text'/>
+<div class='input-group-append'>
+<button class='btn btn-primary' type='submit'>Convert</button>
+</div>
+</div>
+</form>
+</section>
+<section>
+<div class='row'>
+<div class='col-3'>
+<button class='btn btn-dark btn-block' id='passbtn' onclick='sUp(&#39;#result&#39;)'>Password</button>
+</div>
+<div class='col-9'>
+<div class='input-group'>
+<div class='input-group-prepend'>
+<span class='input-group-text'><svg fill='none' height='24' id='i-lock' stroke='currentcolor' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' viewBox='0 0 32 32' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M5 15 L5 30 27 30 27 15 Z M9 15 C9 9 9 5 16 5 23 5 23 9 23 15 M16 20 L16 23'></path>
+<circle cx='16' cy='24' r='1'></circle></svg></span>
+</div>
+<input class='form-control' disabled='disabled' id='passinput' onclick='sUp(&#39;#result&#39;)' onkeypress='sUp(&#39;#result&#39;)' type='text'/>
+</div>
+</div>
+</div>
+</section>
+<section class='optioncontrol'>
+<div class='d-inline-block custom-control custom-switch'>
+<input class='custom-control-input' id='countDown' onclick='sUp(&#39;#result&#39;)' type='checkbox'/>
+<label class='custom-control-label' for='countDown' onclick='sUp(&#39;#result&#39;)'>Countdown</label>
+</div>
+</section>
+<section class='trans' style='overflow: hidden;height: 0'>
+<div id='result'></div>
+<div id='bitly'></div>
+</section>
+<section class='layouthide'>
+<div class='row text-center' style='margin-top:20%'>
+<div class='featured'>
+<svg fill='none' height='60' id='i-eye' stroke='currentcolor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 32 32' width='60' xmlns='http://www.w3.org/2000/svg'><circle cx='17' cy='15' r='1'></circle><circle cx='16' cy='16' r='6'></circle><path d='M2 16 C2 16 7 6 16 6 25 6 30 16 30 16 30 16 25 26 16 26 7 26 2 16 2 16 Z'></path>
+</svg>
+<h3>Encrypt</h3>
+<p>Make your url unreadable and no one can bypass</p>
+</div>
+<div class='featured'>
+<svg fill='none' height='60' id='i-lock' stroke='currentcolor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 32 32' width='60' xmlns='http://www.w3.org/2000/svg'><path d='M5 15 L5 30 27 30 27 15 Z M9 15 C9 9 9 5 16 5 23 5 23 9 23 15 M16 20 L16 23'></path>
+<circle cx='16' cy='24' r='1'></circle></svg>
+<h3>Password</h3>
+<p>Set a password to protect your links from unauthorized access</p>
+</div>
+<div class='featured'>
+<svg fill='none' height='60' id='i-settings' stroke='currentcolor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 32 32' width='60' xmlns='http://www.w3.org/2000/svg'><path d='M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z'></path><circle cx='16' cy='16' r='4'></circle></svg>
+<h3>Setting</h3>
+<p>Easy to setting without need to know programming language</p>
+</div>
+</div>
+</section>
+<script type='text/javascript'>
+//<![CDATA[
+ "use strict";
+                $(document).ready(function() {
+
+                  config.countdown ? $('#countDown').prop('checked', true) : $('#countDown').prop('checked', false) ;
+
+                  $('#passbtn').on('click', function(e) {
+                    var $this = $(this);
+                      if($this.hasClass('btn-dark')){
+                        $this.removeClass('btn-dark').addClass('btn-primary');
+                        $('#passinput').removeAttr('disabled');
+                      } else {
+                        $this.removeClass('btn-success').addClass('btn-dark');
+                        $('#passinput').attr('disabled', 'disabled')[0].value = '';
+                      }
+                    e.preventDefault();
+                  });
+
+                  $('#safelink').on('submit', function(e) {
+                    e.preventDefault();
+                    var $this = $(this),
+                    passinput = $('#passinput')[0],
+                    keyit = passinput.value.length ? passinput.value : config.defaultkey,
+                    url = $this.find('#urlinput')[0],
+                    randPost = $('#randPost')[0],
+                    result = $('#result')[0],
+                  bitly = $('#bitly')[0];
+                  url.value.split(",").forEach(myFunction);
+                 function myFunction(item) {
+                    var data = {};
+                    data.url = item,
+                    data.countdown = $('#countDown')[0].checked;
+
+                    if (url.value.length) {
+                var resultencode = config.page+'?u='+encodeURIComponent(Tea.encrypt(JSON.stringify(data), keyit));
+                        result.innerHTML += validurlit(url.value) ? resultencode +'<br>': config.lang.validtext ;
+            if (validurlit(url.value)) {
+
+        $.bitlr({
+        apiKey: '23c47f073826eb0cdc1c2abedbb006976e0e0549',
+        link: resultencode,
+        anchor: true,
+        success: function(newLink) {
+          //$('#bitly').html(newLink);
+          //$('#bitly').html($('#bitly',newLink).html());
+          //$('#bitly').replaceWith($('#bitly',newLink));
+        },
+        error: function() {
+          $('.urls').hide();
+        }
+      });                      
+                } else {bitly.innerHTML = ''}
+
+                    } else {
+                      result.innerHTML = '<div class="alert alert-danger text-center">'+config.lang.urlempty+'</div>';
+                    bitly.innerHTML = '';
+                    }
+                  }
+                    setTimeout(function(){
+               if (validurlit(url.value)) {$("#bitly").css({"overflow": "hidden", "height": "100px"})}else{$("#bitly").css({"overflow": "hidden", "height": "0px"})};
+                result.parentNode.style.height = result.offsetHeight+bitly.offsetHeight+'px';
+                    }, 0);
+                  });
+                });
+//]]>
+</script>
+<div class='section' id='page-is'>
+</div>
+</div>
+<div class='main-right'>
+<div class='ads-right sticky-top section' id='ads-right'><div class='widget HTML' data-version='2' id='HTML704'>
+</div></div>
+</div>
+</div>
+</div>
+<footer class='footer'>
+<div class='row'>
+<div class='credit'>
+              &#169; 2021 <a href='https://diglink.blogspot.com/' title='diglink'><span title='diglink'>diglink</span></a>
+</div>
+<div class='credit text-right'>
+              Created By <a href='//thuthuat.github.io' id='naas' title='thuthuat'>Maxbong</a>
+</div>
+</div>
+</footer>
+</div>
+<script type='text/javascript'>
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("htuopen");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() { modal.style.display = "block";}
+span.onclick = function() { modal.style.display = "none";}
+window.onclick = function(event) { if (event.target == modal) {  modal.style.display = "none";  }};
+</script>
+
+<!--
+</body>--> </body>
+</html>
