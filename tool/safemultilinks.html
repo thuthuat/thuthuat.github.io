@@ -74,8 +74,6 @@ pre code{padding:10px;display:inline-block;word-wrap: anywhere;}
 #fullpage{min-height:100%;margin:0 0 -120px 0;padding:0 0 120px 0}
 .sticky-top{position:-webkit-sticky;position:sticky;top:calc(60px + 1rem);z-index:1020}
 .main-wrapper{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
-.main-wrapper .main-left,.main-wrapper .main-right{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}
-.main-wrapper .main-content{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}
   
 .input-group{position:relative;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:stretch;align-items:stretch;width:100%;margin-bottom: 1rem;}
 .input-group-append,.input-group-prepend{display:-ms-flexbox;display:flex}
@@ -135,9 +133,11 @@ footer.footer{border-top:1px solid #dee2e6;margin-top: 15px;}
 .main-wrapper .main-left,.main-wrapper .main-right{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}
 .main-wrapper .main-content{-ms-flex:0 0 100%;flex:0 0 100%;max-width:600px;margin:0 auto}
 } 
+.main-content {    max-width: 100%;}
 .countdown{font-size:2rem;color:#f44336;font-weight:600}  
 .modal{display:none;position:fixed;z-index:9999;padding-top:100px;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:#000;background-color:rgba(0,0,0,.4)}.modal-content{background-color:#fefefe;margin:auto;padding:20px;border:1px solid #888;width:100%;max-width:600px;font-size:0.9rem;}.close{color:#aaa;float:right;font-size:28px;font-weight:700}.close:focus,.close:hover{color:#000;text-decoration:none;cursor:pointer}.panel-body li{list-style:inherit;margin-left:20px}
-#result,#bitly{padding-left:30px}
+#bitly{font-size: 0.7rem;display: table-cell;}
+#bitly tr td {max-width: 250px; border: 1px solid #ddd; padding: 5px;}
 .resultshow::before{content:"Encrypt link Result:";font-size:1.5rem;line-height:2.5rem}
 #result li,#bitly li{list-style:decimal;font-size:0.9rem}
 .bitlyshow::before{content:"Bitly Shorten Link:";font-size:1.5rem;line-height:2.5rem}
@@ -284,8 +284,7 @@ footer.footer{border-top:1px solid #dee2e6;margin-top: 15px;}
         data: JSON.stringify(params)
         }).done(function(data) {
               if(s.anchor === true) {
-              s.success.call(this, $('#bitly').append('<li>'+data.link+'</li>'));
-
+              s.success.call(this, $('#bitly').append('<tr><td>'+s.orglink+'</td><td>'+s.link+'</td><td>'+data.link+'</td></tr>'));
             } else {
               s.success.call(this, data.link);           
             }
@@ -397,10 +396,6 @@ lang: {
 </script>
 </div></div>
 <div class='main-wrapper'>
-<div class='main-left'>
-<div class='ads-left sticky-top section' id='ads-left'><div class='widget HTML' data-version='2' id='HTML602'>
-</div></div>
-</div>
 <div class='main-content'>
 <section>
 <form autocomplete='off' class='form-group' id='safelink'>
@@ -440,7 +435,9 @@ lang: {
 </section>
 <section class='trans' style='overflow: hidden;'>
 <ol id='result'></ol>
-<ol id='bitly'></ol>
+<table style='width:100%'>
+<tbody id='bitly' style='width:100%'></tbody>
+</table>
 </section>
 <section class='layouthide'>
 <div class='row text-center' style='margin-top:20%'>
@@ -487,54 +484,52 @@ lang: {
                     var $this = $(this),
                     passinput = $('#passinput')[0],
                     keyit = passinput.value.length ? passinput.value : config.defaultkey,
-                    url = $this.find('#urlinput')[0],
-                    randPost = $('#randPost')[0],
+                    urls = $this.find('#urlinput')[0],
                     result = $('#result')[0],
                   bitly = $('#bitly')[0];
-                  url.value.split(",").forEach(myFunction);
-                 function myFunction(item) {
+                  $('#bitly').html("");
+                  //url.value.split(",").forEach(myFunction);
+                  var url= urls.value.split(",");
+					var i;
+					for (i = 0; i < url.length; i++) {
+
                     var data = {};
-                    data.url = item,
+                    data.url = url[i],
                     data.countdown = $('#countDown')[0].checked;
 
-                    if (url.value.length) {
+                    if (urls.value.length) {
                 var resultencode = config.page+'?u='+encodeURIComponent(Tea.encrypt(JSON.stringify(data), keyit));
-                        result.innerHTML += validurlit(url.value) ? '<li>'+resultencode +'</li>': config.lang.validtext ;
-            if (validurlit(url.value)) {
-
+                        //result.innerHTML += validurlit(urls.value) ? '<li>'+resultencode +'</li>': config.lang.validtext ;
+                       
+            if (validurlit(url[i])) {
+//result.append('<li>'+resultencode+'</li>')
         $.bitlr({
         apiKey: '23c47f073826eb0cdc1c2abedbb006976e0e0549',
         link: resultencode,
+        orglink :data.url,
         anchor: true,
-        success: function(newLink) {
-          //$('#bitly').html(newLink);
-        },
+        success: function(newLink) {},
         error: function() {
           $('.urls').hide();
         }
       });                      
-                } else {bitly.innerHTML = ''}
+                } else {$('#bitly').append('<tr><td>'+url[i]+'</td><td>'+config.lang.validtext+'</td><td></td></tr>')}
 
                     } else {
-                      result.innerHTML = '<div class="alert alert-danger text-center">'+config.lang.urlempty+'</div>';
-                    bitly.innerHTML = '';
-                    }
-                  }
+                      bitly.innerHTML = '<div class="alert alert-danger text-center">'+config.lang.urlempty+'</div>';
+                    }                  
                     setTimeout(function(){
-               if (validurlit(url.value)) {$("#result").addClass('resultshow');$("#bitly").addClass('bitlyshow');};
+               if (validurlit(url)) {$("#bitly").addClass('bitlyshow');};
                 //result.parentNode.style.height = result.offsetHeight+bitly.offsetHeight+'px';
                 result.parentNode.style.height = 'auto';
                     }, 0);
+                    }
                   });
                 });
 //]]>
 </script>
 <div class='section' id='page-is'>
 </div>
-</div>
-<div class='main-right'>
-<div class='ads-right sticky-top section' id='ads-right'><div class='widget HTML' data-version='2' id='HTML704'>
-</div></div>
 </div>
 </div>
 </div>
