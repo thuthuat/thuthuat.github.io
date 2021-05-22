@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Get dimension from image src - Maxbong
+	</title>
+
+	<style>
+		#autoresizing {
+			display: block;
+			overflow: hidden;
+			resize: none;width:90%;
+          min-height:50px;
+		}
+	</style>
+  <script src='//code.jquery.com/jquery-2.1.4.min.js' type='text/javascript'></script>
+</head>
+
+<body>
+	<h1 style="color: green">
+		Get dimension from image src - by Maxbong
+	</h1>
+	<p>
+	<b>
+	Paste image src, comma symbol "," between each src.
+      </b></p>
+	
+	<textarea id="autoresizing"></textarea>
+	<br><button type="button" onclick="myFunction()">Get it</button><br><br>
+    <div id="demo"></div>
+	<script type="text/javascript">
+    textarea = document.querySelector("#autoresizing");
+    textarea.addEventListener('input', autoResize, false);
+  
+    function autoResize() {
+      this.style.height = 'auto';
+      this.style.height = this.scrollHeight + 'px';
+    };
+      function myFunction() {
+        $('#demo').html("");
+        $('.copycode').remove();
+        //var x = $('#autoresizing').value.split(",");
+        //var x = $('#autoresizing').value;
+        var x = document.getElementById("autoresizing").value.split(",");
+        if (document.getElementById("autoresizing").value.length){
+          //$('#demo').before("<button class='copy'>Copy</button><br>");
+        var i;
+    for (i = 0; i < x.length; i++) {
+          const img = new Image();
+img.onload = function() {
+   $('#demo').append('&lt;img class="lazy" data-original-height="'+this.height+'" data-original-width="'+this.width+'" loading="lazy" src="'+img.src.replace(/[0-9]+\.bp\.blogspot.com/,"lh5.ggpht.com")+'" /&gt;')
+}
+img.src = x[i];
+        }
+
+
+        $(document).ready(function(){var b=$("#demo"),a="<button class='copycode'>Copy</button>";b.before(a)});(function(a){a.fn.selectText=function(){var e=document;var c=this[0];console.log(this,c);if(e.body.createTextRange){var b=document.body.createTextRange();b.moveToElementText(c);b.select()}else{if(window.getSelection){var d=window.getSelection();var b=document.createRange();b.selectNodeContents(c);d.removeAllRanges();d.addRange(b);document.execCommand("Copy")}}};a.fn.removeRange=function(){if(window.getSelection){if(window.getSelection().empty){window.getSelection().empty()}else{if(window.getSelection().removeAllRanges){window.getSelection().removeAllRanges()}}}else{if(document.selection){document.selection.empty()}}}})(jQuery);$(document).ready(function(){$(".copycode").click(function(){var b=$(this).parent().find("#demo"),a=$(this),g="Copied",f=a.text();b.selectText();a.html(g);setTimeout(function(){a.html(f);b.removeRange()},1000)})});
+      }else{document.getElementById("demo").innerHTML="It's Empty!"}
+      };
+
+	</script>
+</body>
+
+</html>
