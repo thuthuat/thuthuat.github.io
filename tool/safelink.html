@@ -227,7 +227,6 @@ $(document).ready(function() {
 //]]>  
 </script>
 </head><!--<head>
-
 </head>-->
 <!--<body>--> 
 <div class='outer-wrapper'>
@@ -305,6 +304,19 @@ lang: {
 </div>
 </form>
 </section>
+
+<section class='optioncontrol'>
+<div class='d-inline-block custom-control custom-switch'>
+<input class='custom-control-input' id='mrcong' type='checkbox' checked name="urlnote"/>
+<label class='custom-control-label' for='mrcong'>mcong</label>
+</div>
+
+<div class='d-inline-block custom-control custom-switch'>
+<input class='custom-control-input' id='nugi4u' type='checkbox' name="urlnote"/>
+<label class='custom-control-label' for='nugi4u'>nugi4u</label>
+</div>
+</section>
+
 <section>
 <div class='row'>
 <div class='col-3'>
@@ -328,7 +340,7 @@ lang: {
 </div>
 <div class='col-9'>
 <div class='input-group'>
-<input class='form-control' disabled='disabled' id='noteinput' onclick='sUp(&#39;#result&#39;)' onkeypress='sUp(&#39;#result&#39;)' type='text'/>
+<input class='form-control' disabled='disabled' id='noteinput' onclick='sUp(&#39;#result&#39;)' onkeypress='sUp(&#39;#result&#39;)' type='text' />
 </div>
 </div>
 </div>
@@ -543,6 +555,9 @@ setTimeout(function(){$('.copied').remove();},3000);
             }
             e.preventDefault();
         });
+        $('input[type="checkbox"]').on('change', function() {
+          $('input[name="' + this.name + '"]').not(this).prop('checked', false);
+        });
         $('#safelink').on('submit', function(e) {
             e.preventDefault();
             var $this = $(this),
@@ -555,7 +570,8 @@ setTimeout(function(){$('.copied').remove();},3000);
                 bitly = $('#bitly')[0],
                 data = {};
             	data.url = url.value,
-				data.note = noteinput.value.length ? noteinput.value : "",
+				//data.note = noteinput.value.length ? noteinput.value : (mrcong.checked ? "Pass UnZip: <code>mrcong.com</code>" : (nugi4u.checked ? "Pass UnZip: <code>nudegirls4u.com</code>" : "")),
+                data.note = noteinput.value.length ? (mrcong.checked ? "Pass UnZip: <code>mrcong.com</code><br>" + noteinput.value : (nugi4u.checked ? "Pass UnZip: <code>nudegirls4u.com</code><br>" + noteinput.value : noteinput.value)) : (mrcong.checked ? "Pass UnZip: <code>mrcong.com</code>" : (nugi4u.checked ? "Pass UnZip: <code>nudegirls4u.com</code>" : "")),
                 data.countdown = $('#countDown')[0].checked;
             if (url.value.length) {
 
