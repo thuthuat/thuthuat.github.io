@@ -8,7 +8,7 @@ function do_replace(e) {
   }
   }
 function final_replace(f) {
-    document.getElementById('finalresult').value = document.getElementById('escaped').value
+    document.getElementById('finalresult').value = document.getElementById('escaped').value.replace(/(https\:\/\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*\/)([^\/]*)(\/[^(?=\,|$)]*(?=\,|$))/,'$1s0-l1$3')
 }  
   
 function myFunction() {
@@ -23,9 +23,9 @@ function myFunction() {
     for (i = 0; i < x.length; i++) {
           const img = new Image();
 img.onload = function() {
-   $('#finalresult').append('&lt;img class="lazy" data-original-height="'+this.height+'" data-original-width="'+this.width+'" loading="lazy" src="'+img.src.replace(/[0-9]+\.bp\.blogspot.com/,"lh5.ggpht.com")+'" /&gt;')
+   $('#finalresult').append('&lt;img class="lazy" data-original-height="'+this.height+'" data-original-width="'+this.width+'" loading="lazy" src="'+img.src.replace(/[0-9]+\.bp\.blogspot.com/,"lh5.ggpht.com").replace(/\/s0-l1\//,'/s1600/')+'" /&gt;')
 }
-img.src = x[i];
+img.src = x[i].replace(/(https\:\/\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*\/[^\/]*\/)([^\/]*)(\/[^(?=\,|$)]*(?=\,|$))/,'$1s0-l1$3');
         }
 
 
