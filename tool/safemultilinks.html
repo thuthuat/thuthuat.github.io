@@ -498,7 +498,7 @@ lang: {
                     data.countdown = $('#countDown')[0].checked;
 
                     if (urls.value.length) {
-                var resultencode = config.page+'?u='+encodeURIComponent(Tea.encrypt(JSON.stringify(data), keyit));
+                var resultencode = config.page+'#u='+encodeURIComponent(Tea.encrypt(JSON.stringify(data), keyit));
                         //result.innerHTML += validurlit(urls.value) ? '<li>'+resultencode +'</li>': config.lang.validtext ;
                        
             if (validurlit(url[i])) {
