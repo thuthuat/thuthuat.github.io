@@ -411,6 +411,24 @@ lang: {
 </div>
 </form>
 </section>
+  
+<section class='optioncontrol'>
+<div class='d-inline-block custom-control custom-switch'>
+<input class='custom-control-input' id='forkup' type='checkbox' checked name="urlnote"/>
+<label class='custom-control-label' for='forkup'>4kup</label>
+</div>
+  
+<div class='d-inline-block custom-control custom-switch'>
+<input class='custom-control-input' id='mrcong' type='checkbox' name="urlnote"/>
+<label class='custom-control-label' for='mrcong'>mcong</label>
+</div>
+
+<div class='d-inline-block custom-control custom-switch'>
+<input class='custom-control-input' id='nugi4u' type='checkbox' name="urlnote"/>
+<label class='custom-control-label' for='nugi4u'>nugi4u</label>
+</div>
+</section>
+  
 <section>
 <div class='row'>
 <div class='col-3'>
@@ -427,6 +445,21 @@ lang: {
 </div>
 </div>
 </section>
+  
+<section>
+<div class='row'>
+<div class='col-3'>
+<button class='btn btn-dark btn-block' id='notebtn' onclick='sUp(&#39;#result&#39;)'>Note</button>
+</div>
+<div class='col-9'>
+<div class='input-group'>
+<input class='form-control' disabled='disabled' id='noteinput' onclick='sUp(&#39;#result&#39;)' onkeypress='sUp(&#39;#result&#39;)' type='text' />
+</div>
+</div>
+</div>
+</section>  
+
+  
 <section class='optioncontrol'>
 <div class='d-inline-block custom-control custom-switch'>
 <input class='custom-control-input' id='countDown' onclick='sUp(&#39;#result&#39;)' type='checkbox'/>
@@ -478,11 +511,25 @@ lang: {
                       }
                     e.preventDefault();
                   });
-
+        $('#notebtn').on('click', function(e) {
+            var $this = $(this);
+            if ($this.hasClass('btn-dark')) {
+                $this.removeClass('btn-dark').addClass('btn-primary');
+                $('#noteinput').removeAttr('disabled');
+            } else {
+                $this.removeClass('btn-success').addClass('btn-dark');
+                $('#noteinput').attr('disabled', 'disabled')[0].value = '';
+            }
+            e.preventDefault();
+        });
+        $('input[type="checkbox"]').on('change', function() {
+          $('input[name="' + this.name + '"]').not(this).prop('checked', false);
+        });
                   $('#safelink').on('submit', function(e) {
                     e.preventDefault();
                     var $this = $(this),
                     passinput = $('#passinput')[0],
+                    noteinput = $('#noteinput')[0],
                     keyit = passinput.value.length ? passinput.value : config.defaultkey,
                     urls = $this.find('#urlinput')[0],
                     result = $('#result')[0],
@@ -490,15 +537,16 @@ lang: {
                   $('#bitly').html("");
                   //url.value.split(",").forEach(myFunction);
                   var url= urls.value.split(",");
-					var i;
-					for (i = 0; i < url.length; i++) {
+          var i;
+          for (i = 0; i < url.length; i++) {
 
                     var data = {};
                     data.url = url[i],
+                data.note = noteinput.value.length ? (forkup.checked ? "<code>https://4kup.net</code><br>" + noteinput.value : (mrcong.checked ? "Pass UnZip: <code>mrcong.com</code><br>" + noteinput.value : (nugi4u.checked ? "Pass UnZip: <code>nudegirls4u.com</code><br>" + noteinput.value : noteinput.value))) : (forkup.checked ? "<code>https://4kup.net</code>" : (mrcong.checked ? "Pass UnZip: <code>mrcong.com</code>" : (nugi4u.checked ? "Pass UnZip: <code>nudegirls4u.com</code>" : ""))),
                     data.countdown = $('#countDown')[0].checked;
 
                     if (urls.value.length) {
-                var resultencode = config.page+'#u='+encodeURIComponent(Tea.encrypt(JSON.stringify(data), keyit));
+                var resultencode = config.page+'#?u='+encodeURIComponent(Tea.encrypt(JSON.stringify(data), keyit));
                         //result.innerHTML += validurlit(urls.value) ? '<li>'+resultencode +'</li>': config.lang.validtext ;
                        
             if (validurlit(url[i])) {
