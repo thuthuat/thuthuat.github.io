@@ -4,7 +4,7 @@ function do_replace(e) {
   if (blogspot.checked == true){
     document.getElementById('imgsrc').value = document.getElementById('source').value.replace(/(?:[^>]*\ssrc=['\"]https\:\/\/[0-9]+\.bp\.([^'\"]*))?[^>]*?(\/?)>/gi,'$1').replace(/blogspot.com/gi,',https://lh5.ggpht.com').replace(/^\,/,'')
   }else{
-    document.getElementById('imgsrc').value = document.getElementById('source').value.replace(/(?:[^>]*\ssrc=['\"]([^'\"]*))?[^>]*?(\/?)>/gi,'$1').replace(/https\:/gi,'').replace(/\/\//gi,',https://').replace(/^\,/,'')
+    document.getElementById('imgsrc').value = document.getElementById('source').value.replace(/(?:[^>]*\ssrc=['\"]([^'\"]*))?[^>]*?(\/?)>/gi,'$1').replace(/https\:/gi,'').replace(/\/\//gi,',https://').replace(/^\,/,'').replace(/\,/gi,'\n')
   }
   }
 function final_replace(f) {
